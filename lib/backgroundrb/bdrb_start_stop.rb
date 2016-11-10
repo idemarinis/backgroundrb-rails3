@@ -106,7 +106,7 @@ module BackgrounDRb
         if BDRB_CONFIG[:backgroundrb][:log].nil? or BDRB_CONFIG[:backgroundrb][:log] != 'foreground'
           redirect_io(SERVER_LOGGER)
         end
-        $0 = "backgroundrb master"
+        $0 = "backgroundrb master path="+RAILS_HOME"
         BackgrounDRb::MasterProxy.new()
       end
 
